@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasil Persentase Tipe Kulit</title>
+    <link rel="stylesheet" href="stylehsil.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .title-section {
+        background-color: #825454;
+        color: white;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .brand img {
+        height: 80px;
+        transform: scale(1.4);
+        transform-origin: left center;
+        object-fit: contain;
+        position: relative;
+        top: 80px;
+        z-index: 10;
+        margin-left: 10px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="brand">
+      <img src="pinkstyle-removebg-preview.png" alt="Skin Match Logo" />
+    </div>
+
+    <h1>Hasil Persentase Tipe Kulit</h1>
+    <div class="container">
+      <div class="left" id="barContainer">
+        <!-- Progress bar akan muncul di sini lewat JS -->
+      </div>
+      <div class="right">
+        <div class="box" id="hasilDominan">
+          <!-- Hasil dominan muncul di sini -->
+        </div>
+        <div class="box" id="tipsPerawatan">
+          <!-- Tips muncul di sini -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Pindahkan penyimpanan tipe kulit ke dalam scripthsil.js -->
+
+    <script src="scripthsil.js"></script>
+
+    <div class="teks">
+      <a href="cek.html" class="btn-kandungan">% Kandungan</a>
+      <span class="panah">→</span>
+      <span>Untuk mengetahui kadar kandungan yang sesuai untuk kamu!</span>
+    </div>
+  </body>
+</html>

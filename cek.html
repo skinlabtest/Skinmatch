@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Skin Match</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to top, #825454, #ffffff);
+        color: #825454;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px;
+      }
+      .logo {
+        font-size: 36px;
+        font-weight: bold;
+        color: #825454;
+      }
+      .logo span {
+        letter-spacing: 5px;
+      }
+      .about-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #825454;
+        color: #ffffff;
+        padding: 12px 40px;
+        font-size: 18;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+      .instruction {
+        text-align: center;
+        font-size: 25px;
+        margin: 20px;
+      }
+      .container {
+        width: 90%;
+        max-width: 600px;
+        margin: 0 auto 40px auto;
+      }
+      .section-title {
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-size: 18px;
+      }
+      .box {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(130, 84, 84, 0.2);
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+      select {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        background-color: #e1c6c6;
+        color: #825454;
+      }
+      .persen-wrapper {
+        display: flex;
+        gap: 10px;
+      }
+      .persen-wrapper input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        font-size: 16px;
+        color: #825454;
+      }
+      .persen-wrapper .cek-btn {
+        width: 18%;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        background-color: #e1c6c6;
+        color: #825454;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .persen-wrapper .cek-btn:hover {
+        background-color: #caa6a6;
+        transform: scale(1.02);
+      }
+      .hasil-box {
+        border: 2px dashed #825454;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+        padding: 5px;
+      }
+      .hasil-label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .hasil-isi {
+        height: 100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+        padding: 0 10px;
+        flex-direction: column;
+      }
+      .back-home {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .back-home button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #ffffff;
+        color: #825454;
+        border: 2px solid #825454;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .back-home button:hover {
+        background-color: #825454;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <img
+        src="pinkstyle-removebg-preview.png"
+        alt="Skin Match Logo"
+        style="height: 150px"
+      />
+      <button class="about-btn" onclick="window.location.href='teampagee.html'">
+        ABOUT
+      </button>
+    </div>
+    <div class="instruction">
+      Jawab pertanyaan berikut untuk mengetahui kadar kandungan yang sesuai
+      untukmu!
+    </div>
+    <div class="container">
+      <div class="section-title">
+        TIPE KULIT KAMU :
+        <span id="tipeKulitTampil" style="text-transform: uppercase"></span>
+      </div>
+      <div class="box">
+        <label for="kandungan">Kandungan apa yang ingin kamu cek?</label>
+        <select id="kandungan">
+          <option value="">– Pilih Kandungan –</option>
+        </select>
+      </div>
+      <div class="box">
+        <label for="persentase">Berapa % kandungan tersebut?</label>
+        <div class="persen-wrapper">
+          <input type="text" id="persentase" placeholder="Masukkan angka %" />
+          <button class="cek-btn" onclick="cekResiko()">Cek Resiko</button>
+        </div>
+      </div>
+      <div class="box hasil-box">
+        <div class="hasil-label">Hasil:</div>
+        <div id="rekomendasi" class="hasil-isi"></div>
+      </div>
+      <div class="back-home">
+        <button
+          class="start-button"
+          onclick="window.location.href='deks1.html'"
+        >
+          BACK TO HOMEPAGE
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const tipeKulit = localStorage.getItem("tipeKulit");
+      const tampilElem = document.getElementById("tipeKulitTampil");
+      if (tipeKulit) tampilElem.textContent = tipeKulit;
+      else tampilElem.textContent = "(belum dipilih)";
+
+      const semuaKandungan = [
+        "salicylic_acid",
+        "niacinamide",
+        "glycolic_acid",
+        "retinol",
+        "hyaluronic_acid",
+        "glycerin",
+        "ceramide",
+        "squalane",
+        "vitamin_e",
+        "aloe_vera",
+        "tea_tree_oil",
+        "vitamin_c",
+      ];
+
+      function formatNamaKandungan(nama) {
+        return nama
+          .split("_")
+          .map((k) => k.charAt(0).toUpperCase() + k.slice(1))
+          .join(" ");
+      }
+
+      const selectElem = document.getElementById("kandungan");
+      semuaKandungan.forEach((k) => {
+        const opt = document.createElement("option");
+        opt.value = k;
+        opt.textContent = formatNamaKandungan(k);
+        selectElem.appendChild(opt);
+      });
+
+      const daftarRekomendasi = {
+        berminyak: [
+          "salicylic_acid",
+          "niacinamide",
+          "glycolic_acid",
+          "retinol",
+        ],
+        kering: [
+          "hyaluronic_acid",
+          "glycerin",
+          "ceramide",
+          "squalane",
+          "vitamin_e",
+          "aloe_vera",
+        ],
+        kombinasi: [
+          "niacinamide",
+          "salicylic_acid",
+          "glycerin",
+          "tea_tree_oil",
+          "vitamin_e",
+        ],
+        sensitif: [
+          "hyaluronic_acid",
+          "ceramide",
+          "niacinamide",
+          "squalane",
+          "aloe_vera",
+        ],
+        normal: ["hyaluronic_acid", "niacinamide", "vitamin_c", "vitamin_e"],
+      };
+
+      function hitungTurunanEfek(kandungan, x) {
+        switch (kandungan) {
+          case "salicylic_acid":
+            return 2 * x;
+          case "niacinamide":
+            return 1 * x;
+          case "glycolic_acid":
+            return 1.8 * x;
+          case "retinol":
+            return 2.5 * x;
+          case "hyaluronic_acid":
+            return 0.4 * x;
+          case "glycerin":
+            return 0.5 * x;
+          case "ceramide":
+            return 0.6 * x;
+          case "squalane":
+            return 0.7 * x;
+          case "vitamin_e":
+            return 1.2 * x;
+          case "aloe_vera":
+            return 0.3 * x;
+          case "tea_tree_oil":
+            return 1.5 * x;
+          case "vitamin_c":
+            return 2.0 * x;
+          default:
+            return 0;
+        }
+      }
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,128 @@
+body {
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(to bottom, #fbeeee, #825454);
+  color: #332222;
+  margin: 0;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: right;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  background: linear-gradient(to right, #FFFFFF, #825454);
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.left, .right {
+  flex: 1;
+}
+
+.box {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  border: 1px solid #6e4a35;
+    
+}
+
+.brand-title {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    z-index: 10;
+    text-align: center;
+    font-family: 'Jost', sans-serif;
+}
+
+.skin-text {
+    font-size: 60px;
+    /* Sesuaikan lagi bila terlalu besar */
+    font-weight: 400;
+    margin: 0;
+    color: #4d2c1d;
+    line-height: 0.9;
+}
+
+.match-text {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
+    color: #4d2c1d;
+    letter-spacing: 6px;
+    margin-top: -10px;
+}
+
+
+.bar {
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.bar-bg {
+  background: #ddd;
+  height: 40px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 40px;
+}
+
+.red { background: #CE1111; }
+.pink { background: #E06060; }
+.yellow { background: #DFDF69; color: black; }
+.brown { background: #771515; }
+.green { background: #277715; }
+
+.teks{
+    color: #FFFFFF;
+    text-align: center;
+}
+.btn-kandungan {
+  background-color: #e3bfc0;
+  color: #5a3b3b;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .panah {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #5a3b3b;
+  }
+  
+  .teks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  }
