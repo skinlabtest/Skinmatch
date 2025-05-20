@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SKIN MATCH</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Jost', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(to bottom, #ffffff 0%, #f5e9e9 40%, #d5aaaa 80%, #825454 100%);
+      font-family: 'Jost', sans-serif;
+      min-height: 100vh;
+    }
+
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+    }
+
+    .header {
+      background-color: #FFFFFF;
+      padding: 10px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .about-btn {
+      background-color: #825454;
+      color: white;
+      border: none;
+      padding: 5px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .title-section {
+      background-color: #825454;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand img {
+      height: 60px;
+      transform: scale(1.4);
+      transform-origin: left center;
+      object-fit: contain;
+    }
+
+    .tagline-container {
+      text-align: right;
+    }
+
+    .tagline {
+      font-size: 16px;
+      max-width: 300px;
+      line-height: 1.4;
+    }
+
+    .tagline-divider {
+      width: 120%;
+      height: 1px;
+      background-color: white;
+      margin-top: 5px;
+      margin-left: -20%;
+    }
+
+    .skin-types {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px 40px;
+      background: transparent; /* biarkan ikut body */
+    }
+
+
+    .skin-type {
+      width: 130px;
+      background-color: white;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      height: 230px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .skin-type:hover {
+      transform: translateY(-5px);
+    }
+
+    .skin-image {
+      width: 90px;
+      height: 80px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #f3e9e9;
+      border-radius: 5px;
+      margin: 10px auto 0;
+    }
+
+    .normal-skin { background-image: url('IMAGE/kulit-normal.jpg'); }
+    .dry-skin { background-image: url('IMAGE/kulit-kering.jpg'); }
+    .oily-skin { background-image: url('IMAGE/kulit-berminyak.jpg'); }
+    .combination-skin { background-image: url('IMAGE/kulit-kombinasi.jpg'); }
+    .sensitive-skin { background-image: url('IMAGE/kulit-sensitif.jpg'); }
+
+    .skin-title {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+      color: #5F1E1E;
+    }
+
+    .skin-subtitle {
+      text-align: center;
+      color: #5F1E1E;
+      margin-top: 5px;
+    }
+
+    .skin-description {
+      display: none;
+      padding: 10px;
+      font-size: 12px;
+      line-height: 1.4;
+      color: #5F1E1E;
+      text-align: center;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .find-type-btn {
+      background-color: white;
+      border: 1px solid #825454;
+      color: #825454;
+      padding: 8px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      display: block;
+      margin: 20px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    .find-type-btn:hover {
+      background-color: #825454;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <button class="about-btn" onclick="window.location.href='teampagee.html'">ABOUT</button>
+
+    </div>
+
+    <div class="title-section">
+      <div class="brand">
+        <img src="whitestyle-removebg-preview.png" alt="Skin Match Logo">
+      </div>
+      <div class="tagline-container">
+        <div class="tagline">FRIENDLY ASSISTANT<br>FOR YOUR CHARMING SKIN</div>
+        <div class="tagline-divider"></div>
+      </div>
+    </div>
+
+    <div class="skin-types">
+      <div class="skin-type" onclick="showDescription(this, 'normal')">
+        <div class="skin-image normal-skin"></div>
+        <div class="skin-title">Kulit</div>
+        <div class="skin-subtitle">Normal</div>
+        <div class="skin-description" id="normal-desc">
+          Kulit yang seimbang, tidak terlalu berminyak atau kering. Kulit halus, pori-pori kecil, dan jarang mengalami masalah kulit.
+        </div>
+      </div>
+      <div class="skin-type" onclick="showDescription(this, 'dry')">
+        <div class="skin-image dry-skin"></div>
+        <div class="skin-title">Kulit</div>
+        <div class="skin-subtitle">Kering</div>
+        <div class="skin-description" id="dry-desc">
+          Cenderung kasar, bersisik, atau terasa kencang. Kurangnya produksi minyak alami menyebabkan kulit terlihat kusam dan mudah teriritasi.
+        </div>
+      </div>
+      <div class="skin-type" onclick="showDescription(this, 'oily')">
+        <div class="skin-image oily-skin"></div>
+        <div class="skin-title">Kulit</div>
+        <div class="skin-subtitle">Berminyak</div>
+        <div class="skin-description" id="oily-desc">
+          Kulit yang menghasilkan sebum (minyak) berlebih, terutama di area T-zone (dahi, hidung, dagu). Cenderung berjerawat dan memiliki pori-pori besar.
+        </div>
+      </div>
+      <div class="skin-type" onclick="showDescription(this, 'combination')">
+        <div class="skin-image combination-skin"></div>
+        <div class="skin-title">Kulit</div>
+        <div class="skin-subtitle">Kombinasi</div>
+        <div class="skin-description" id="combination-desc">
+          Kombinasi dari dua jenis kulit, biasanya berminyak di T-zone dan kering atau normal di area lain seperti pipi.
+        </div>
+      </div>
+      <div class="skin-type" onclick="showDescription(this, 'sensitive')">
+        <div class="skin-image sensitive-skin"></div>
+        <div class="skin-title">Kulit</div>
+        <div class="skin-subtitle">Sensitif</div>
+        <div class="skin-description" id="sensitive-desc">
+          Kulit yang mudah bereaksi terhadap produk atau kondisi tertentu. Sering mengalami kemerahan, gatal, terbakar, atau iritasi.
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="find-type-btn">FIND YOUR SKIN TYPE</a>
+  </div>
+  
+  <script>
+    function showDescription(element, type) {
+      const allTypes = document.querySelectorAll('.skin-type');
+      allTypes.forEach(type => {
+        type.style.height = '230px';
+        const desc = type.querySelector('.skin-description');
+        desc.style.display = 'none';
+      });
+  
+      const description = element.querySelector('.skin-description');
+      element.style.height = '350px';
+      description.style.display = 'block';
+    }
+  
+    // Fungsi untuk pindah ke halaman quiz
+    function goToQuiz() {
+      window.location.href = "quiz.html"; // arahkan ke file quiz.html
+    }
+  </script>
+  
+  <script>
+    function showDescription(element, type) {
+      const allTypes = document.querySelectorAll('.skin-type');
+      allTypes.forEach(type => {
+        type.style.height = '230px';
+        const desc = type.querySelector('.skin-description');
+        desc.style.display = 'none';
+      });
+
+      const description = element.querySelector('.skin-description');
+      element.style.height = '350px';
+      description.style.display = 'block';
+    }
+  </script>
+</body>
+</html>

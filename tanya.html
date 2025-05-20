@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Match</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="pinkstyle-removebg-preview.png" alt="Skin Match Logo">
+      </div>
+      <button class="about-btn" onclick="location.reload()">ULANG</button>
+    </header>
+
+    <div class="kuisioner-section">
+      <h2>Jawab pertanyaan berikut untuk mengetahui tipe kulitmu!</h2>
+
+      <div class="form-card">
+        <form action="hasil.html" method="get" id="skinQuizForm">
+          <div class="form-group">
+            <label>1. Bagaimana kondisi kulit kamu ketika bangun tidur?</label>
+            <select class="answer" data-question="1">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Terasa berminyak</option>
+              <option value="K">Terasa kering atau kaku</option>
+              <option value="N">Terasa lembap dan nyaman</option>
+              <option value="S">Ada kemerahan atau iritasi</option>
+              <option value="B">Ada jerawat baru yang muncul</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>2. Apakah kamu merasa perlu langsung mencuci muka setelah bangun tidur?</label>
+            <select class="answer" data-question="2">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Ya, karena terasa kotor atau berminyak</option>
+              <option value="N">Tidak, karena kulit masih terasa bersih</option>
+              <option value="C">Tergantung cuaca</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>3. Bagaimana kondisi kulit kamu sebelum tidur (tanpa skincare)?</label>
+            <select class="answer" data-question="3">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Berminyak dan lengket</option>
+              <option value="K">Kering dan ketarik</option>
+              <option value="N">Normal</option>
+              <option value="S">Ada jerawat/iritasi baru</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>4. Apakah kulit kamu cenderung mengalami perubahan saat cuaca panas/dingin?</label>
+            <select class="answer" data-question="4">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Lebih berminyak saat panas</option>
+              <option value="K">Lebih kering saat dingin</option>
+              <option value="N">Tidak terlalu berubah</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>5. Bagaimana kulit kamu bereaksi setelah mencoba produk baru?</label>
+            <select class="answer" data-question="5">
+              <option>– Pilih jawaban –</option>
+              <option value="N">Langsung cocok, tidak ada masalah</option>
+              <option value="S">Sedikit kemerahan, tidak nyaman</option>
+              <option value="S">Langsung iritasi atau jerawatan</option>
+              <option value="">Belum pernah coba</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>6. Dalam seminggu terakhir, apakah kamu merasa kulitmu berubah?</label>
+            <select class="answer" data-question="6">
+              <option>– Pilih jawaban –</option>
+              <option value="K">Ya, jadi lebih kering</option>
+              <option value="B">Ya, jadi lebih berminyak</option>
+              <option value="B">Ya, muncul jerawat</option>
+              <option value="N">Tidak ada perubahan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>7. Bagaimana kondisi kulit kamu setelah seharian beraktivitas di ruangan?</label>
+            <select class="answer" data-question="7">
+              <option>– Pilih jawaban –</option>
+              <option value="K">Lebih kusam dan terasa kotor</option>
+              <option value="B">Muncul minyak berlebih</option>
+              <option value="S">Kemerahan atau iritasi</option>
+              <option value="N">Tidak ada perubahan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>8. Apakah kulitmu terasa berbeda setelah lama berada di ruangan ber-AC?</label>
+            <select class="answer" data-question="8">
+              <option>– Pilih jawaban –</option>
+              <option value="K">Lebih kering</option>
+              <option value="S">Tidak terasa nyaman (perih/gatal)</option>
+              <option value="N">Tidak ada efek</option>
+              <option value="N">Justru terasa lebih segar</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>9. Setelah memakai skincare malam, bagaimana kulitmu keesokan paginya?</label>
+            <select class="answer" data-question="9">
+              <option>– Pilih jawaban –</option>
+              <option value="N">Lembap dan kenyal</option>
+              <option value="B">Masih berminyak</option>
+              <option value="B">Terasa berat/lengket</option>
+              <option value="N">Tidak ada perbedaan</option>
+              <option value="S">Muncul jerawat/reaksi</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>10. Seberapa sering kamu mengganti produk skincare?</label>
+            <select class="answer" data-question="10">
+              <option>– Pilih jawaban –</option>
+              <option value="S">Sering, suka coba-coba</option>
+              <option value="S">Kadang-kadang, kalau tidak cocok</option>
+              <option value="N">Jarang, pakai yang itu-itu aja</option>
+              <option value="">Belum pernah pakai skincare</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>11. Apa yang paling bikin kamu tidak nyaman soal kondisi kulitmu?</label>
+            <select class="answer" data-question="11">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Minyak berlebih</option>
+              <option value="B">Jerawat</option>
+              <option value="K">Kulit kusam</option>
+              <option value="S">Sensitif/gampang iritasi</option>
+              <option value="K">Kering & bersisik</option>
+              <option value="N">Tidak ada, terasa nyaman</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>12. Seberapa sering kamu menyentuh wajah dengan tangan?</label>
+            <select class="answer" data-question="12">
+              <option>– Pilih jawaban –</option>
+              <option value="B">Sangat sering</option>
+              <option value="S">Kadang-kadang</option>
+              <option value="N">Jarang</option>
+              <option value="N">Hampir tidak pernah</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>13. Apakah kamu rutin mengganti sarung bantal dan handuk wajah?</label>
+            <select class="answer" data-question="13">
+              <option>– Pilih jawaban –</option>
+              <option value="N">Ya, seminggu sekali atau lebih sering</option>
+              <option value="N">Dua minggu sekali</option>
+              <option value="B">Jarang, kalau ingat saja</option>
+              <option value="B">Tidak pernah ganti secara rutin</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>14. Seberapa besar pengaruh stress terhadap kondisi kulitmu?</label>
+            <select class="answer" data-question="14">
+              <option>– Pilih jawaban –</option>
+              <option value="S">Sangat berpengaruh</option>
+              <option value="S">Kadang-kadang terasa efeknya</option>
+              <option value="N">Tidak terlalu berpengaruh</option>
+              <option value="">Tidak tahu</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>15. Kalau disuruh nilai kondisi kulitmu sekarang dari skala 1–5, berapa?</label>
+            <select class="answer" data-question="15">
+              <option>– Pilih jawaban –</option>
+              <option value="K">1</option>
+              <option value="K">2</option>
+              <option value="N">3</option>
+              <option value="N">4</option>
+              <option value="B">5</option>
+            </select>
+          </div>
+
+          <div class="button-container">
+            <button type="submit" class="submit-btn">Lihat Hasil</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="hasil-section" style="display: none">
+      <h2>Hasil Persentase Tipe Kulit</h2>
+
+      <div class="form-card">
+        <div class="chart-section" id="hasilChart">
+          </div>
+
+        <div class="result-section" id="hasilDominan">
+          </div>
+
+        <div class="tips-section" id="tipsPerawatan">
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('skinQuizForm');
+      const answers = document.querySelectorAll('.answer');
+
+      // Mapping pertanyaan dan nilai per jawaban
+      const skorMap = {
+        1: {
+          "Terasa berminyak": { B: 2 },
+          "Terasa kering atau kaku": { K: 2 },
+          "Terasa lembap dan nyaman": { N: 2 },
+          "Ada kemerahan atau iritasi": { S: 2 },
+          "Ada jerawat baru yang muncul": { B: 1, S: 1 }
+        },
+        2: {
+          "Ya, karena terasa kotor atau berminyak": { B: 2 },
+          "Tidak, karena kulit masih terasa bersih": { N: 2 },
+          "Tergantung cuaca": { C: 1 }
+        },
+        3: {
+          "Berminyak dan lengket": { B: 2 },
+          "Kering dan ketarik": { K: 2 },
+          "Normal": { N: 2 },
+          "Ada jerawat/iritasi baru": { S: 2 }
+        },
+        4: {
+          "Lebih berminyak saat panas": { B: 2 },
+          "Lebih kering saat dingin": { K: 2 },
+          "Tidak terlalu berubah": { N: 2 }
+        },
+        5: {
+          "Langsung cocok, tidak ada masalah": { N: 2 },
+          "Sedikit kemerahan, tidak nyaman": { S: 1 },
+          "Langsung iritasi atau jerawatan": { S: 2 },
+          "Belum pernah coba": { N: 1 }
+        },
+        6: {
+          "Ya, jadi lebih kering": { K: 2 },
+          "Ya, jadi lebih berminyak": { B: 2 },
+          "Ya, muncul jerawat": { B: 1, S: 1 },
+          "Tidak ada perubahan": { N: 2 }
+        },
+        7: {
+          "Lebih kusam dan terasa kotor": { B: 1, C: 1 },
+          "Muncul minyak berlebih": { B: 2 },
+          "Kemerahan atau iritasi": { S: 2 },
+          "Tidak ada perubahan": { N: 2 }
+        },
+        8: {
+          "Lebih kering": { K: 2 },
+          "Tidak terasa nyaman (perih/gatal)": { S: 2 },
+          "Tidak ada efek": { N: 2 },
+          "Justru terasa lebih segar": { N: 2 }
+        },
+        9: {
+          "Lembap dan kenyal": { N: 2 },
+          "Masih berminyak": { B: 2 },
+          "Terasa berat/lengket": { B: 1, S: 1 },
+          "Tidak ada perbedaan": { C: 1 },
+          "Muncul jerawat/reaksi": { S: 2 }
+        },
+        10: {
+          "Sering, suka coba-coba": { S: 1 },
+          "Kadang-kadang, kalau tidak cocok": { C: 1 },
+          "Jarang, pakai yang itu-itu aja": { N: 1 },
+          "Belum pernah pakai skincare": { N: 1 }
+        },
+        11: {
+          "Minyak berlebih": { B: 2 },
+          "Jerawat": { B: 1, S: 1 },
+          "Kulit kusam": { C: 1 },
+          "Sensitif/gampang iritasi": { S: 2 },
+          "Kering & bersisik": { K: 2 },
+          "Tidak ada, terasa nyaman": { N: 2 }
+        },
+        12: {
+          "Sangat sering": { B: 1, S: 1 },
+          "Kadang-kadang": { C: 1 },
+          "Jarang": { N: 1 },
+          "Hampir tidak pernah": { N: 2 }
+        },
+        13: {
+          "Ya, seminggu sekali atau lebih sering": { N: 2 },
+          "Dua minggu sekali": { C: 1 },
+          "Jarang, kalau ingat saja": { B: 1, S: 1 },
+          "Tidak pernah ganti secara rutin": { S: 2 }
+        },
+        14: {
+          "Sangat berpengaruh": { S: 2 },
+          "Kadang-kadang terasa efeknya": { C: 1 },
+          "Tidak terlalu berpengaruh": { N: 1 },
+          "Tidak tahu": { N: 1 }
+        },
+        15: {
+          "1": { S: 2 },
+          "2": { S: 2 },
+          "3": { C: 1 },
+          "4": { N: 2 },
+          "5": { N: 2 }
+        }
+      };
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const skor = { B: 0, K: 0, C: 0, S: 0, N: 0 };
+
+        answers.forEach((select, index) => {
+          const questionNum = index + 1;
+          const selectedText = select.options[select.selectedIndex].text.trim();
+          const jawabanSkor = skorMap[questionNum][selectedText];
+          if (jawabanSkor) {
+            for (const tipe in jawabanSkor) {
+              skor[tipe] += jawabanSkor[tipe];
+            }
+          }
+        });
+
+        console.log("Skor akhir:", skor);
+        localStorage.setItem("hasilSkor", JSON.stringify(skor));
+        window.location.href = "hasil.html";
+      });
+    });
+  </script>
+  
+</body>
+</html>
